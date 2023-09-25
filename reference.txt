@@ -1,0 +1,1047 @@
+                                              op_backtracking   
+int arr[100];
+bool op(int inx, int value)
+{
+    if (inx == 5)
+    {
+        if (value == 23)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    return op(inx + 1, value + arr[inx + 1]) ||
+        op(inx + 1, value - arr[inx + 1]) ||
+        op(inx + 1, value * arr[inx + 1]);
+}
+int main()
+{
+    fast;
+
+    while (cin >> arr[0] >> arr[1] >> arr[2] >> arr[3] >> arr[4]
+        , arr[0] != 0 && arr[1] != 0 && arr[2] != 0 && arr[3] != 0 && arr[4] != 0)
+    {
+        bool ok = 0;
+        sort(arr, arr + 5);
+        do
+        {
+            if (op(1,arr[0]))
+            {
+                ok = 1;
+                break;
+            }
+        } while (next_permutation(arr, arr + 5));
+        if (ok)
+        {
+            cout << "yes";
+        }
+        else
+        {
+            cout<<"NO";
+        }
+    }
+    
+
+    return 0;
+}
+========================================================================================================
+                                     pascal traingle by recursion             
+int pascaa_traingle(int r,int c){
+
+   if(c==0||c==r){
+       return 1;
+   }
+    return pascaa_traingle(r - 1, c) + pascaa_traingle(r - 1, c - 1);
+}
+int main()
+{
+    AHMED();
+
+    int c, r;
+    cout << pascaa_traingle(4, 2);
+    return 0;
+}
+========================================================================================================
+                                     ApowB by recursion
+int a, b;
+int power(int base,int pow){
+    if(pow==0){
+        return 1;
+    }
+    /*
+      if(pow==1)
+      {
+        return base;
+      }
+    */
+    return base * power(base, pow - 1);
+}
+========================================================================================================
+sum number 1 to num even:((n/2)*((n/2)+1))
+sum number 1 to num odd:((n+1)/2)*((n+1)/2)
+(sqrt(2 * n + 0.25)) - 0.5;//reverse summation 
+========================================================================================================
+                                            خطان متوازيان
+ double x1, y1, x2, y2;
+  double x3, y3, x4, y4;
+  cin >> x1 >> y1 >> x2 >> y2;
+  cin >> x3 >> y3 >> x4 >> y4;
+  double result1 = (x2 - x1) * (y4 - y3);
+  double result2 = (y2 - y1) * (x4 - x3);
+  if (result1 == result2)
+  {
+    cout << "YES" << ed;
+  }
+  else
+  {
+    cout << "NO" << ed;
+  }
+========================================================================================================
+                                       3نقط علي استقامه
+(y3-y2)*(x2-x1)=(y2-y1)*(x3-x2)
+========================================================================================================
+                                                البعد بين نقطتين
+result = sqrt((pow((x2 - x1), 2)) + (pow((y2 - y1), 2)));
+========================================================================================================
+                                       modulo     
+(a+b)%c=((a%c)+(b%c))%c
+(a×b)%c=((a%c)×(b%c))%c
+(a−b)%c=((a%c)−(b%c))%c
+========================================================================================================
+                              area of triangle
+double a, b, c;
+  cin >> a >> b >> c;
+  double sum = a + b + c;
+  double Area_the_triangle = sqrt((sum / 2) * (sum / 2 - a) * (sum / 2 - b) * (sum / 2 - c));
+========================================================================================================
+                                       المسافه
+الجزر التربيعي لفرق السينات تربيع +فرق الصادات تربيع
+sqrt(pow((x1-x2),2)+pow((y1-y2),2))
+========================================================================================================
+                                                        half binary search
+left+(right-left)/2;
+========================================================================================================
+الجزر التربيعي     sqrt(num)
+الجزر التكعيبي     cbrt(num)
+========================================================================================================
+                                        convert to binary
+int number;
+    cout<<"please enter number is converted to Binary?"<<ed;
+    cin>>number;
+    int binary [8]={0,0};
+    for(int i=7;i>=0;i--){
+        binary [i]=number%2;
+        number=floor(number/2);
+    }
+    for(int i=0;i<8;i++){
+        cout<<binary[i]<<' ';
+    }
+	return 0;
+========================================================================================================
+========================================================================================================
+
+// priority_queue
+    // add-->push() && emplace()
+    // delete-->pop();
+    // print-->top();
+    // empty() && size() && swap();
+    priority_queue<int> pq;
+    // يتم التعامل مع اكبر رقم
+    pq.emplace(40);
+    pq.push(60);
+    pq.emplace(50);
+    pq.push(80);
+    cout << pq.top() << endl; // input=80;
+    pq.pop();                 // remove->80;
+    cout << pq.top() << endl; // input=60;
+    while (pq.size() != 0)
+    {
+        cout << pq.top() << ' '; // input=60 50 40
+        pq.pop();
+    }
+_______________________________________________________________________________________
+ priority_queue<int,vector<int>,greater<int>> pq;
+    // يتم التعامل مع اصغر رقم
+    pq.emplace(40);
+    pq.push(60);
+    pq.emplace(50);
+    pq.push(80);
+    cout << pq.top() << endl; // input=40;
+    pq.pop();                 // remove->40;
+    cout << pq.top() << endl; // input=50;
+    while (pq.size() != 0)
+    {
+        cout << pq.top() << ' '; // input=50 60 80
+        pq.pop();
+    }
+========================================================================================================
+========================================================================================================
+
+// queue;
+    // using-->first_in_first_out;
+    // add-->push() && emplace()
+    // delete-->pop();
+    // print-->front() || back();
+    // empty() && size() && swap();
+    queue<string> q;
+    q.push("ah");
+    q.emplace("med");
+    cout << q.front() << endl; // input=ah;
+    cout << q.back() << endl;  // input=med;
+    //q.pop();
+    //cout << q.front() << endl;//input=med
+    q.push("atef");
+    q.emplace("elkawasy");
+    while (!q.empty())
+    {
+        cout << q.front();//input =ahmedatefelkawasy
+        q.pop();
+    }
+========================================================================================================
+========================================================================================================
+
+// stack
+    // طريقه لتخزين الداتا
+    // تتبع نظام-->last_in_frist_out;
+    // يمكن جعل الاستاك علي هيئيه فيكتور او ليست-->stack<string,vector<string>s;
+    // add-->push() && emplace()
+    // delete-->pop();
+    // print-->top();
+    // empty() && size() && swap();
+    stack<string> s;
+    s.push("wasy");
+    s.emplace("elka");
+    cout << s.top()<<endl; // top-->print,,,,,input=elka-->اخر عنصر تم اضافته هو من تقوم عليه العمليه
+    s.pop();
+    cout << s.top() << endl; // input=wasy;
+    s.push("elka");
+    s.emplace("ef");
+    s.push("at");
+    s.emplace("med");
+    s.push("ah");
+    for (size_t i = 0;!s.empty(); i++)
+    {
+        cout << s.top(); // input=ahmedatefelkawasy;
+        s.pop();
+    }
+========================================================================================================
+========================================================================================================
+
+// map
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    for (auto it : m)
+    {
+        cout << it.first << ' ' << it.second << ed;
+        /*   output=
+             12 mohamed
+             23 ali
+             132 ahmed
+         */
+    }
+__________________________________________________________________________________________________
+// add
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    m[233] = "salah";
+    for (auto it : m)
+    {
+        cout << it.first << ' ' << it.second << ed;
+        /* output=
+            12 mohamed
+            23 ali
+            132 ahmed
+            233 salah
+         */
+    }
+________________________________________________________________________________________________
+// iterator
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    auto it = m.begin();
+    cout << it->first << ' ' << it->second << ed;//output=12 mohamed
+_________________________________________________________________________________________________
+ // count
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    cout << m.count(12) << endl;//output=true -->العنصر موجود
+    cout << m.count(22) << endl;//output=false -->العنصر غير موجود
+___________________________________________________________________________________________
+// not support push_back && push_front;
+____________________________________________________________
+// insert() && emplace()
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    m.insert({22, "mo"});
+    for (auto it : m)
+    {
+        cout << it.first << ' ' << it.second << ed;
+        /*
+        output=
+           12 mohamed
+           22 mo
+           23 ali
+           132 ahmed
+         */
+    }
+_________________________________________________________________________________________________
+// erase
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    auto it = m.begin();
+    m.erase(it);
+    for ( auto it:m)
+    {
+        cout << it.first << ' ' << it.second << ed;
+        //output=  23 ali
+        //         132 ahmed
+    }
+    cout << endl;
+    auto it2 = m.begin();
+    it2++;
+    m.erase(it2, m.end());
+    for ( auto it2:m)
+    {
+        cout << it2.first << ' ' << it2.second << ed;
+        // output= 23 ali
+    }
+________________________________________________________________________________________________________
+ // equal_range()
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    auto it = m.equal_range(12);
+    cout << it.first->first << ' ' << it.first->second<<endl;
+    //output=12 mohamed-->العنصر المحدد
+    cout << it.second->first << ' ' << it.second->second << endl;
+    // output=23 ali-->ما بعد العنصر المحدد مباشرة
+__________________________________________________________________________________________________________
+//key_comp()
+    map<int, string> m = {{132, "ahmed"}, {12, "mohamed"}, {23, "ali"}};
+    m[50] = "lolo";
+    m[32] = "ramadan";
+    m[22] = "saleh";
+    auto com = m.key_comp();
+    auto it = m.begin();
+    int n = 50;
+    for ( ;com(it->first,n); it++)
+    {
+        cout << it->first << ' ' << it->second << ed;
+        /* 
+          input=
+          12 mohamed
+          22 saleh
+          23 ali
+          32 ramadan
+         */
+    }
+______________________________________________________________________________________________________
+//lower_bound() && upper_bound()
+_____________________________________________
+//empty(),max_size(),swap(),clear()
+___________________________________________
+    // check name is found or not
+    map<string, int> ID;
+    ID["ahmed"] = 22;
+    ID["ali"] = 21;
+    ID["emad"] = 10;
+    ID["waled"] = 11;
+    string name;
+    cin >> name; // ahmed;
+    for (auto it = ID.begin(); it != ID.end(); it++)
+    {
+        if (it->first == name)
+        {
+            cout << "ID IS : " << it->second;//output=ID IS : 22
+            return 0;
+        }
+    }
+    cout << "NAME IS NOT FOUND";
+___________________________________________________________________________________________________
+// frequency by MAP;
+    map<int, int> freq;
+    int n;
+    cin >> n;
+    f(i, n)
+    {
+        int s;
+        cin >> s;
+        freq[s]++;
+    }
+    for (auto it : freq)
+    {
+        cout << it.first << "-->" << it.second << ed;
+        /*
+          output=
+          1-->4
+          2-->3
+          3-->2
+          4-->2
+         */
+    }
+========================================================================================================
+========================================================================================================
+
+//multimap
+
+// multimap.نفس خصائص map;
+    // تسمح لك بتكرار العناصر
+    // EX
+    multimap<string, string> mp;
+    mp.insert({"ahmed", "lw"});
+    mp.insert({"ahmed", "st"});
+    mp.insert({"ahmed", "ss"});
+    mp.insert({"ahmed", "rm"});
+    for (auto it : mp)
+    {
+        cout << it.first << ' ' << it.second << ed;
+        /*
+        output=
+        ahmed lw
+        ahmed st
+        ahmed ss
+        ahmed rm
+         */
+    }
+____________________________________________________________________________________________________
+//count
+    multimap<string, string> mp;
+    mp.insert({"ahmed", "lw"});
+    mp.insert({"ahmed", "st"});
+    mp.insert({"ahmed", "ss"});
+    mp.insert({"ahmed", "rm"});
+    cout << mp.count("ahmed"); // output=4;-->عدد وجود الاسم
+========================================================================================================
+========================================================================================================
+
+//setنفس خضائص
+ //multiset تسمع بالتكرار
+_______________________________________
+//count-->setيختلف عن ال
+ // count
+    multiset<int> s = {1,1,1,1,2,2, 3, 4, 5, 6, 7};
+    cout << s.count(1)<<ed;//input=4-->عدد الرقم 1داخل الارراي
+    for (auto it : s)
+        cout << it << ' '; // output= 1 1 1 1 2 2 3 4 5 6 7 -->يسمح بالتكرار
+========================================================================================================
+========================================================================================================
+
+
+                                // set
+    // عناصره مرتبه دايما
+    // سريع جدا في البحث
+    // لا يمكن ان يكون عنصر مكرر
+    // element is a binary tree
+    // no push_back && push_front
+    // random access not supperted-->arr[] X;
+______________________________________________________________________________________________________
+set<int> s = {5, 6, 3, 2, 1, 1, 2, 3, 4, 9};
+    for(auto it:s)
+        cout << it << ' '; //output =1 2 3 4 5 6 9-->مرتبه ولا يوجد تكرار
+______________________________________________________________________________________________________
+//begin(), end(), rend(), rbegin(), cbegin(), cend(), crend(), crbegin();
+______________________________________________________________________________________________________
+//empty(), size(), max_size();
+______________________________________________________________________________________________________
+// insert && emplace
+    set<int> s = {5, 6, 3, 2, 1, 1, 2, 3, 4, 9};
+    auto it = s.begin();
+    s.emplace_hint(it, 10);
+    it = s.emplace_hint(it, 7);
+    it = s.emplace_hint(it, 8);
+    it = s.emplace_hint(it, 12);
+    s.emplace_hint(s.end(), 22);
+    for(auto it:s)
+        cout << it << ' '; //output=1 2 3 4 5 6 7 8 9 10 12 22
+____________________________________________________________________________________________________________
+//erase()
+    set<int> s = {5, 6, 3, 2, 1, 1, 2, 3, 4, 9};
+    auto it = s.begin();
+    s.erase(it);
+    for(auto it:s)
+        cout << it << ' '; // output=2 3 4 5 6 9;
+___________________________________________________________________________________________________________
+ //lower_bound && upper_bound
+    set<int> s = {1, 2, 3, 4, 5, 6, 7};
+    auto low = s.lower_bound(2);
+    auto upp = s.upper_bound(5);
+    s.erase(low, upp);
+    for(auto it:s)
+    {
+        cout << it<<' ';//output =1 6 7
+    }
+________________________________________________________________________________________________________
+//clear(),//swap()
+_________________________________________________
+//key_comp
+    set<int> s = {1, 2, 3, 4, 5, 6, 7};
+    auto com = s.key_comp();
+    auto it = s.begin();
+    int c = 5;
+    for ( ; com(*it,c); it++)
+    {
+        cout << *it << ' '; // output=1 2 3 4;
+    }
+____________________________________________________________________________
+// count-->للتاكد من وجود العنصر ام لا
+    set<int> s = {1, 2, 3, 4, 5, 6, 7};
+    cout << s.count(20) << endl; // output=false
+    cout << s.count(7) << endl;  // output=true
+____________________________________________________________________________
+//equal_range
+    set<int> s = {1, 2, 3, 4, 5, 6, 7};
+    auto it = s.equal_range(4);
+    cout << *it.first << endl;  // output=4;
+    cout << *it.second << endl; // output=5;
+    //first-->الرقم الذي تم تحديده
+    //second-->الرقم الذي يليه مباشرة
+_____________________________________________________________________________
+// ترتيب العناصر من الكبير الي الصغير
+    set<int, greater<int>> s = {1, 2, 3, 4, 5, 6, 7};
+    for (auto it : s)
+        cout << it << ' '; // output= 7 6 5 4 3 2 1
+========================================================================================================
+========================================================================================================
+
+                                                          //Deque
+
+    // add;
+    deque<int> d = {1, 2, 3, 4, 5};
+    d.push_back(1);
+    for(auto it:d)
+    {
+        cout << it << ' '; //output=1 2 3 4 5 1
+    }
+    cout << endl;
+    d.push_front(5);
+    for(auto it2:d)
+    {
+        cout << it2 << ' '; // output= 5 1 2 3 4 5 1
+    }
+________________________________________________________________________________________________
+    // delete
+    deque<int> d = {1, 2, 3, 4, 5};
+    d.pop_back();
+    d.pop_front();
+    for (auto it:d)
+    {
+        cout << it << ' '; // output= 2 3 4;
+    }
+___________________________________________________________________________________________________
+// insert && emplace-->نفس العمل ولكن الثانيه اسرع
+    deque<int> d = {1, 2, 3, 4, 5};
+    d.insert(d.begin() + 2, 9);
+    for (auto it:d)
+    {
+        cout << it << ' '; // output= 1 2 9 3 4 5
+    }
+    cout << endl;
+    d.emplace(d.end(), 3);
+    for (auto it:d)
+    {
+        cout << it << ' '; // output= 1 2 9 3 4 5 3
+    }
+___________________________________________________________________________________________________
+ //clear-->حذف جميع العناصر
+    deque<int> d = { 1, 2, 3, 4, 5 };
+    d.clear();
+    for (auto it : d)
+    {
+        cout << it << ' ';
+    }
+
+========================================================================================================
+========================================================================================================
+
+//forward list
+
+    //ADD->> 1-push_front()....لا يوجد push_back
+    //emplace_after()
+    //emplace_front()
+    //insert_after()
+    //erase_after()
+    //splice_after()
+    //befor_begin()
+    
+______________________________________________________________________________________________________
+// next;
+    forward_list<int> f={1, 2, 3, 4, 5};
+    auto it =  next(f.begin(),3);
+    cout << *it; // output= 4
+========================================================================================================
+========================================================================================================
+
+ // list
+
+    // remove()
+    list<int> l = {1, 2, 3, 4, 5, 6};
+    l.remove(2);
+    for(auto it:l)
+        cout << it << ' '; // output= 1 3 4 5 6;
+_______________________________________________________________________________________________
+// assing
+    list<int> l = {1, 2, 3, 4, 5, 6};
+    l.assign(5,4);
+    for(auto it:l)
+        cout << it << ' '; // output= 4 4 4 4 4;
+________________________________________________________________________________________________
+// merga-->تقوم بالدمج والترتيب
+    list<int> l = {1, 2, 3, 4, 5, 6};
+    list<int> l2 = {7,8,9,10};
+    l.merge(l2);
+    for(auto it:l)
+        cout << it << ' '; // output= 1 2 3 4 5 6 7 8 9 10;
+________________________________________________________________________________________________
+// splice-->تقوم بالدمج وبدون الترتيب
+    list<int> l = {1, 5, 6, 9, 3, 4, 5, 6};
+    list<int> l2 = {7, 8, 9, 10};
+    l.splice(l.begin(),l2);
+    for (auto it : l)
+        cout << it << ' '; // output= 7 8 9 10 1 5 6 9 3 4 5 6
+_______________________________________________________________________________________________
+// sort()-->ترتب من الصغير الي الكبير
+    // sort(greater<int>());-->ترتيب من الكبير الي الصغير
+    // function sort just list;
+__________________________________________________________________________________________________
+// counter list no random access;
+    // list[2] X;
+========================================================================================================
+========================================================================================================
+
+                                                                         // vector
+___________________________________________________________________________________________
+// capacity
+    vector<int> v1(100, 2);
+
+    cout << v1.size() << endl;     // input=100;
+    cout << v1.capacity() << endl; // input=100;
+
+    v1.push_back(5);
+    
+    cout << v1.size() << endl;     // input=101;
+    cout << v1.capacity() << endl; // input=150;
+    // push_back يزيد الحجم ضعف الحجم الاصلي 
+____________________________________________________________________________________________
+//max_size
+    vector<int>v(5,2);
+    cout << v.max_size();//طباعه اكبر كم للعناصر يمكن اضافتها
+____________________________________________________________________________________________
+//empty
+    vector<int> v={};
+    cout<<v.empty();
+    //output=true..في حاله ان الفيكتور فارغ
+    //output=false..في حاله ان الفيكتور يحتوي علي عناصر
+____________________________________________________________________________________________
+ //pop_back && push_back
+    vector<int> v={1,2,3,4,5};
+    v.pop_back();// لحذف اخر عنصر
+    v.push_back(3); // لاضافه عنصر اخر الارراي
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i] << ' ';
+    }
+    // output= 1 2 3 4 3;
+____________________________________________________________________________________________
+ //iteratot
+    vector<int> v={5,6,3,2,1};
+    //iterator مثل poineter
+    vector<int>::iterator it = v.begin();
+    cout << *it<<endl; //output=4 .. begin يؤشر علي اول اندكس
+    vector<int>::iterator pp = v.end()-1;
+    cout << *pp << endl;//output=1..end() يؤشر علي العنصر الاخير +1
+____________________________________________________________________________________________
+    // crbegin && crend && cend &&cbegin
+    vector<int> v = {5, 6, 3, 2, 1};
+    // crbein عكس begin
+    // crbegin && crend >>const_revers_iterator;
+    // crbegin && crend  >>>تبدا العد من اخر اندكس
+    vector<int>::const_reverse_iterator it1 = v.crbegin();
+    cout << *it1 << endl; // output=1; ->> (crbegin)=(end-1)
+
+    vector<int>::const_reverse_iterator it2 = v.crend() - 1;
+    cout << *it2 << endl; // output=1; ->> (crend-1)=(begin)
+
+    // cbegin && cend >>const_iterator;
+    vector<int>::const_iterator it3 = v.cbegin();
+    cout << *it3 << endl; // output=5; ->> (cbegin)=(begin)
+
+    vector<int>::const_iterator it4 = v.cend()-1;
+    cout << *it4 << endl; // output=1; ->> (cend-1)=(end-1)
+____________________________________________________________________________________________
+// auto..>هي داتا تايب تتكيف تلقائي بالداتا التي تعطيها لها
+    //EX
+    vector<int> v={1, 2, 3, 4, 5};
+    auto it = v.begin();
+    cout << *it << endl; // output=1;
+    // outo->iterator;
+____________________________________________________________________________________________
+// resize && shrint_to_fit;
+    vector<int> v={1, 2, 3, 4, 5};
+    auto it = v.begin();
+    v.resize(10); //اعاده تحديد حجم الاررااي
+    for (it=v.begin(); it != v.end()-1; it++)
+    {
+        cout << *it << ' '; // output=1 2 3 4 5 0 0 0 0;
+    }
+    cout << endl;
+    v.shrink_to_fit();//لحذف العناصر لزياده
+____________________________________________________________________________________________
+ // for edge;
+    vector<int> v={1, 2, 3, 4, 5};
+    for (auto it:v)
+    {
+        cout << it << ' ';//output= 1 2 3 4 5
+    }
+
+_____________________________________________________________________________________________
+// min_element && max_element;
+    vector<int> v={1, 2, 3, 4, 5};
+    cout << *min_element(v.begin(), v.end()) << endl; //>>output=1;
+    cout << *max_element(v.begin(), v.end()) << endl; //>>output=5;
+    //في حاله الحاجه الي الاتنين معا
+    auto pair = minmax_element(v.begin(), v.end());
+    cout << *pair.first << ed; // output=min=1;
+    cout << *pair.second << ed; // output=max=5;
+    //ملحوظه-يجب ان تكون العناصر مرتبه
+
+____________________________________________________________________________________________
+//find_if..لاستخدامها يجب ان تكون العناصر مرتبه
+    vector<int> v = {1, 5, 3, 8, 5,9, 7, 4, 9, 10};
+    sort(v.begin(), v.end());
+    auto it = find_if(v.begin(), v.end(), check);//check_>function number<5
+    for (; it != v.end();it++)
+    {
+        cout << *it << ' ';  //output = 1 3 
+    }
+_____________________________________________________________________________________________
+// insert && emplace -->يقوموا بنفس العمل ولكن الثانيه اسرع
+
+    vector<int> v(10, 2);
+    auto it = v.begin();
+    // وضع المكان الذي تريد ان تضيف فيه وبعده الشئ التي تريد ان تضيفه
+     v.insert(4, 6);
+    v.emplace(2, 5);
+    for (; it != v.end(); it++)
+    {
+        cout << *it << ' ';
+    }
+_______________________________________________________________________________________________
+ // erase
+    vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    auto it = v.begin();
+    // لحذف عنصر واحد
+    // v.erase(v.begin());
+    for (; it != v.end(); it++)
+    {
+        cout << *it << ' '; // output= 2 3 4 5 6 7 8 9;
+    }
+____________________________________________________________________________________________________
+//copy-->>للطباعه بدون for loop
+    vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    copy(v.begin(), v.end(), ostream_iterator<int>(cout," "));
+========================================================================================================
+========================================================================================================
+
+// pair-->لاستلام اكتر من متغير
+    pair<string, int> p("ahmed", 22);
+    // p.fisrt-->توصل لاول مدخل
+    // p.second-->توصل لثاني مدخل
+    cout << p.first << endl;  // output=ahmed
+    cout << p.second << endl; // output=22
+___________________________________________________________________________________
+pair<string, pair<int, float>> p;
+    p.first = "ahmed";
+    p.second.first = 22;
+    p.second.second = 2.8;
+    cout << p.first << endl;  // output=ahmed
+    cout << p.second.first << endl; // output=22
+    cout << p.second.second << endl; // output=2.8
+___________________________________________________________________________________
+vector<pair<int, string>> vp;
+    vp.push_back({22, "ahmed"});
+    vp.push_back({8, "atef"});
+    vp.push_back({14, "alaa"});
+    vp.push_back({10, "doaa"});
+    for (int i = 0; i <vp.size(); i++)
+    {
+        cout << vp[i].first << ' ' << vp[i].second << ed;
+    }
+========================================================================================================
+========================================================================================================
+
+// unordered map
+    // add && search && delete-->time o(1);
+    // using hash tables-->طريقه تستخدم في تخزين الداتا
+________________________________________________________________
+//support begin() && end()
+_______________________________________________________________
+//empty() , size() ,max_size()
+______________________________________________________________
+// clear() && insert() && insert_or_assign()->(c++17) && emplace()
+    //  && emplace_hint() && try_emplace() && erase() && swap() &&
+    // extract()->(c++17) // && merga()->(c++17)
+______________________________________________________________________
+ unordered_map<string, int> um({{"m", 2}, {"r", 5}, {"z", 9}, {"p",6}});
+    cout << um.bucket("m") << endl; // output=2;
+    cout << um.bucket_count() << endl; // output=5;
+    //____________
+    //يستقبل رقم ويعطيك كم باكدت يحتوي عليه
+    cout << um.bucket_size(0) << endl; // output=0;
+    cout << um.bucket_size(1) << endl; // output=1;
+    cout << um.bucket_size(2) << endl; // output=2;
+    cout << um.bucket_size(3) << endl; // output=0;
+    cout << um.bucket_size(4) << endl; // output=1;
+    //----------
+    cout << um.max_bucket_count() << endl; // output=119304647;
+_________________________________________________________________________________
+// load_factor();
+    // max_load_factor();
+    // rehash();
+    // revers();
+========================================================================================================
+========================================================================================================
+
+// unordered multimap
+//نفس خصائص unorderet_map
+//ولكن يمكنها اخد عناصر مكرره
+========================================================================================================
+========================================================================================================
+
+// unordered set
+    // add && search && delete-->time o(1);
+    // using hash tables-->طريقه تستخدم في تخزين الداتا
+    //العناصر لا تكون مرتبه
+    unordered_set<string>us({"aa","ab","ac","ad","ae"});
+    for(auto it:us)
+        cout << it << ' ';//output=ae aa ab ad ac-->using hash tables in print
+_____________________________________________________________________________________________________
+ //bucket
+    unordered_set<string>us({"aa","ab","ac","ad","ae"});
+    for(auto it:us)
+    { 
+        cout << it << " is in bucket :- " << us.bucket(it) << endl;
+        /* 
+          output=
+          ae is in bucket :- 0
+          aa is in bucket :- 3
+          ab is in bucket :- 8
+          ad is in bucket :- 2
+          ac is in bucket :- 9
+         */
+    
+    }
+________
+//bucket
+    unordered_set<int>us={213,2323,21233,4212,323};
+    for(auto it:us)
+    { 
+        cout << it << " is in bucket :- " << us.bucket(it) << endl;
+        /* 
+          output=
+          323 is in bucket :- 4
+          213 is in bucket :- 4
+          2323 is in bucket :- 2
+          21233 is in bucket :- 3
+          4212 is in bucket :- 10
+         */
+    }
+________________________________________________________________________________________________________
+//bucket_count()
+    unordered_set<int>us={213,2323,21233,4212,323};
+    cout << us.bucket_count(); // output=11;
+_____________________________________________________________________________________________________
+// load_factor-->يعطيك نسبه تقريبيه لكل bucket
+    unordered_set<int> us = {213, 2323, 21233, 4212, 323};
+    cout << us.load_factor(); // output=0.454545;
+    //why
+    cout << us.size() << ed;//input=5
+    cout << us.bucket_count() << ed;//input=11
+    // 5/11=0.4545455
+    __________________________________________________________________________________________
+    //max_bucket_count()-->كم باكت سمكن تخزينها
+    unordered_set<int> us = {213, 2323, 21233, 4212, 323};
+    cout << us.max_bucket_count();//output=536870911
+________________________________________________________________________________________________
+   //add function
+    //insert &&emplace &&emplace_hint
+_______________________________________________________________________________________________
+//erase
+   //1-erasing by iterator
+   //2-erasing by key
+   //3-erasing by range
+_______________________________________________________________________________________________
+//empty
+   //clear
+   //count
+   //reverse
+   //swap
+________________________________________________________________________________________
+   //rehash-->في حاله ان العناصر كلها في باكت واحد,تقوم الفانكشن باعاده التوزيع مره اخري
+   //تاخذ رقم ويجب ان يكون اكبر من الباكت
+    unordered_set<int> us = {1, 2, 3, 4, 5};
+    us.rehash(15);
+========================================================================================================
+========================================================================================================
+
+//unordered multiset
+//نفس خصائص unorderet_set
+//ولكن يمكنها اخد عناصر مكرره
+========================================================================================================
+========================================================================================================
+// بسم الله الرحمن الرحيم
+// AHMED ATEF ELKAWASY
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define ed '\n'
+#define fixed(x) fixed << setprecision(x)
+#define f(i, n) for (int i = 0; i < n; i++)
+#define copy copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "))
+#define all(x) x.begin(), x.end()
+constexpr ll oo = 0x3f3f3f3f3f3f3f3f;
+const double pi = 3.141592653589;
+using namespace std;
+void AHMED()
+{ // for VS code
+    ios_base::sync_with_stdio(false);
+    cout.tie(nullptr);
+    cin.tie(nullptr);
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+}
+ll gcd(ll a, ll b)
+{
+    if (b == 0)
+        return a;
+    else
+        return gcd(b, a % b);
+}
+ll lcm(ll a, ll b)
+{
+    return a * b / gcd(a, b);
+}
+ll summation(ll n)
+{
+    return (n * (n + 1)) / 2;
+}
+bool prime(ll n)
+{
+    if (n == 1)
+    {
+        return false;
+    }
+    for (int i = 2; i <= sqrt(n); i++)
+    {
+        if (n % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+bool plindrome_arr(ll arr[], ll arr_size)
+{
+    for (int i = 0; i <= arr_size / 2; i++)
+    {
+        if (arr[i] != arr[arr_size - i - 1])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+bool plindrome_string(string s)
+{
+    ll s_size = s.size();
+    for (int i = 0; i <= s_size / 2; i++)
+    {
+        if (s[i] != s[s_size - i - 1])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+bool plindrome_number(ll n)
+{
+    ll temp = n, res = 0, mod;
+    while (n > 0)
+    {
+        mod = n % 10;
+        res = (res * 10) + mod;
+        n /= 10;
+    }
+    if (temp == res)
+        return true;
+    else
+        return false;
+}
+ll SumEven(ll a, ll b)
+{
+    ll mx = max(a, b);
+    ll mn = min(a, b);
+    mn--;
+    ll n1 = (mx / 2) * ((mx / 2) + 1);
+    ll n2 = (mn / 2) * ((mn / 2) + 1);
+    return abs(n1 - n2);
+}
+ll SumOdd(ll a, ll b)
+{
+    ll mx = max(a, b);
+    ll mn = min(a, b);
+    mn--;
+    ll n1 = pow(((mx + 1) / 2), 2);
+    ll n2 = pow(((mn + 1) / 2), 2);
+    return abs(n1 - n2);
+}
+ll nCr(ll n, ll r)
+{
+    ll res = 1;
+    ll temp = 2;
+    for (int i = r + 1; i <= n; i++)
+    {
+        res *= i;
+        if (temp <= n - r && res % temp == 0)
+        {
+            res /= temp;
+            temp++;
+        }
+    }
+    return res;
+}
+ll nPr(ll n, ll r)
+{
+    ll res = 1;
+    ll temp = 2;
+    for (int i = 2; i <= n; i++)
+    {
+        res *= i;
+        if (temp <= n - r && res % temp == 0)
+        {
+            res /= temp;
+            temp++;
+        }
+    }
+    return res;
+}
+bool sort_pair(pair<int, string> a, pair<int, string> b)
+{
+    if (a.first == b.first)
+        return a.second < b.second;
+    return a.first > b.first;
+}
+void PrimeFactors(ll n)
+{
+    for (ll i = 2; i * i <= n; i++)
+    {
+        while (n % i == 0)
+        {
+            // st.insert(i);
+            n /= i;
+        }
+    }
+    if (n > 1)
+    {
+        // st.insert(n);
+    }
+}
+
+
